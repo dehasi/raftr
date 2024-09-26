@@ -13,7 +13,7 @@ public class TimeServer {
         while (true) {
             try {
                 Socket socket = serverSocket.accept();
-                System.out.println(STR."Connection from \{socket.getInetAddress()}:\{socket.getPort()}");
+                System.out.printf("Connection from %s:%s\n", socket.getInetAddress(), socket.getPort());
                 PrintStream stream = new PrintStream(socket.getOutputStream());
                 stream.println(LocalDateTime.now());
                 socket.close();
